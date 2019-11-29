@@ -4,11 +4,11 @@ class StockType (val id: Int, val type: Int, val Data: String)
 	Please define the type appropriately for your project.
 	
 	in my project
-	1 : Add Note
-	2 : Modify Note(r_img, l_img, _classtype, solv_title)
-	3 : Remove Note
-	4 : Start Exam
-	5 : ReStart Exam
+	1 : Add Note(id, r_img, l_img, _classtype, solv_title)
+	2 : Modify Note(id, r_img, l_img, _classtype, solv_title)
+	3 : Remove Note(id)
+	4 : Start Exam(id, noteList)
+	5 : ReStart Exam(id)
 */
 
 fun input(input: ArrayList<StockType>, isOnline: Boolean): ArrayList<StockType> {
@@ -16,18 +16,113 @@ fun input(input: ArrayList<StockType>, isOnline: Boolean): ArrayList<StockType> 
 	val type = readLine()!!
 	val max = input.size
 	if(!isOnline){
-		if(max==0)
+		if(max==0){
 			for(i in 0..type.split(" ").size-1){
-				print("Data : ")
-				val _data = readLine()!!
-				input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+				when(type.split(" ")[i].toInt()){
+					1 -> {
+						var str: String = "{\n"
+						for(j in 1..5) {
+							if(j==1){
+								print("id: ")
+								val _input = readLine()!!
+								str+="\t\""+"id"+"\": "+_input+",\n"
+							} else if(j==2) {
+								print("r_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"r_img_id"+"\": "+_input+",\n"
+							} else if(j==3) {
+								print("l_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"l_img_id"+"\": "+_input+",\n"
+							} else if(j==4) {
+								print("_classType: ")
+								val _input = readLine()!!
+								str+="\t\""+"_classType"+"\": "+_input+",\n"
+							} else if(j==5) {
+								print("solv_title: ")
+								val _input = readLine()!!
+								str+="\t\""+"solv_title"+"\": \""+_input+"\",\n"
+							}
+						}
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
+					}
+					2 -> {
+						print("Data2 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+					}
+					3 -> {
+						print("Data3 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+					}
+					4 -> {
+						print("Data4 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+					}
+					5 -> {
+						print("Data5 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+					}
+				}
 			}
-		else
+		} else {
 			for(i in 0..type.split(" ").size-1){
-				print("Data : ")
-				val _data = readLine()!!
-				input.add(StockType(i+1+max, type.split(" ")[i].toInt(), _data))
+				when(type.split(" ")[i].toInt()){
+					1 -> {
+						var str: String = "{\n"
+						for(j in 1..5) {
+							if(j==1){
+								print("id: ")
+								val _input = readLine()!!
+								str+="\t\""+"id"+"\": "+_input+",\n"
+							} else if(j==2) {
+								print("r_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"r_img_id"+"\": "+_input+",\n"
+							} else if(j==3) {
+								print("l_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"l_img_id"+"\": "+_input+",\n"
+							} else if(j==4) {
+								print("_classType: ")
+								val _input = readLine()!!
+								str+="\t\""+"_classType"+"\": "+_input+",\n"
+							} else if(j==5) {
+								print("solv_title: ")
+								val _input = readLine()!!
+								str+="\t\""+"solv_title"+"\": \""+_input+"\",\n"
+							}
+						}
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
+					}
+					2 -> {
+						print("Data2 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1+max, type.split(" ")[i].toInt(), _data))
+					}
+					3 -> {
+						print("Data3 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1+max, type.split(" ")[i].toInt(), _data))
+					}
+					4 -> {
+						print("Data4 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1+max, type.split(" ")[i].toInt(), _data))
+					}
+					5 -> {
+						print("Data5 : ")
+						val _data = readLine()!!
+						input.add(StockType(i+1+max, type.split(" ")[i].toInt(), _data))
+					}
+				}
 			}
+		}
 	}
 		
 	else

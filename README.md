@@ -3,7 +3,7 @@ Algorithm for resolving disconnection with App server when internet is not conne
 
 
 ```
-kotlinc /workspace/Warehouse/warehouse.kt -include-runtime -d /workspace/Warehouse/warehouse.jar && java -jar warehouse.jar
+kotlinc /workspace/Warehouse/warehouse.kt -include-runtime -d /workspace/Warehouse/warehouse.jar && java -jar /workspace/Warehouse/warehouse.jar
 
-java -jar warehouse.jar
+java -jar /workspace/Warehouse/warehouse.jar
 ```
