@@ -48,24 +48,68 @@ fun input(input: ArrayList<StockType>, isOnline: Boolean): ArrayList<StockType> 
 						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
 					}
 					2 -> {
-						print("Data2 : ")
-						val _data = readLine()!!
-						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+						var str: String = "{\n"
+						for(j in 1..5) {
+							if(j==1){
+								print("id: ")
+								val _input = readLine()!!
+								str+="\t\""+"id"+"\": "+_input+",\n"
+							} else if(j==2) {
+								print("r_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"r_img_id"+"\": "+_input+",\n"
+							} else if(j==3) {
+								print("l_img_id: ")
+								val _input = readLine()!!
+								str+="\t\""+"l_img_id"+"\": "+_input+",\n"
+							} else if(j==4) {
+								print("_classType: ")
+								val _input = readLine()!!
+								str+="\t\""+"_classType"+"\": "+_input+",\n"
+							} else if(j==5) {
+								print("solv_title: ")
+								val _input = readLine()!!
+								str+="\t\""+"solv_title"+"\": \""+_input+"\",\n"
+							}
+						}
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
 					}
 					3 -> {
-						print("Data3 : ")
-						val _data = readLine()!!
-						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+						var str: String = "{\n"
+						print("id: ")
+						val _input = readLine()!!
+						str+="\t\""+"id"+"\": "+_input+",\n"
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
 					}
 					4 -> {
-						print("Data4 : ")
-						val _data = readLine()!!
-						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+						var str: String = "{\n"
+						for(j in 1..2) {
+							if(j==1){
+								print("id: ")
+								val _input = readLine()!!
+								str+="\t\""+"id"+"\": "+_input+",\n"
+							} else if(j==2) {
+								print("noteList: ")
+								val _input = readLine()!!
+								var test = "["
+								for (k in 0.._input.split(",").size-1)
+									test+=_input.split(",")[k]+","
+								test+="]"
+								str+="\t\""+"noteList"+"\": "+test+",\n"
+							}
+						}
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
 					}
 					5 -> {
-						print("Data5 : ")
-						val _data = readLine()!!
-						input.add(StockType(i+1, type.split(" ")[i].toInt(), _data))
+						var str: String = "{\n"
+						print("id: ")
+						val _input = readLine()!!
+						str+="\t\""+"id"+"\": "+_input+",\n"
+						str+="}\n"
+						input.add(StockType(i+1, type.split(" ")[i].toInt(), str))
 					}
 				}
 			}
