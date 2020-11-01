@@ -1,5 +1,5 @@
 # Warehouse
-Algorithm for resolving disconnection with App server when internet is not connected.
+It's a methodology for managing the data that needs to be sent to the server when there is no internet connection.
 
 
 ```
